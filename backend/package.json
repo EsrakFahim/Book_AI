@@ -1,0 +1,28 @@
+{
+      "name": "backend",
+      "version": "1.0.0",
+      "main": "index.js",
+      "type": "module",
+      "scripts": {
+            "prod": "cross-env NODE_ENV=production nodemon -r dotenv/config --experimental-json-modules src/cluster.js",
+            "dev": "cross-env NODE_ENV=development nodemon -r dotenv/config --experimental-json-modules src/cluster.js",
+            "start": "node -r dotenv/config src/cluster.js"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "description": "",
+      "dependencies": {
+            "axios": "^1.9.0",
+            "cookie-parser": "^1.4.7",
+            "cors": "^2.8.5",
+            "dotenv": "^16.5.0",
+            "express": "^5.1.0",
+            "mongoose": "^8.15.0",
+            "morgan": "^1.10.0"
+      },
+      "devDependencies": {
+            "cross-env": "^7.0.3",
+            "nodemon": "^3.1.10"
+      }
+}
