@@ -14,7 +14,14 @@ if (missingVars.length) {
       process.exit(1);
 }
 
-const PORT = process.env.PORT || 8000;
+// Parse port safely and validate
+const rawPort = process.env.PORT || "8000";
+const PORT = parseInt(rawPort, 10);
+
+if (isNaN(PORT) || PORT <= 0 || PORT > 65535) {
+      console.error(`❌ Invalid PORT value: "${rawPort}". Please fix your .env file (no trailing semicolon)!`);
+      process.exit(1);
+}
 
 // Graceful shutdown
 const gracefulShutdown = async (server) => {

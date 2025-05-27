@@ -1,8 +1,11 @@
 import React from 'react'
+import ChatGPTStreamUI from './CHAT'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <ChatGPTStreamUI />
+    </div>
   )
 }
 
